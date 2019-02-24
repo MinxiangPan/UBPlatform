@@ -12,7 +12,11 @@ const app = express();
 
 //setup whitelist for http request
 //When upoad to server, make sure this is live and prevent un indentify request
-const whitelist = ["http://localhost:3000", "http://localhost:3001"];
+const whitelist = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "http://localhost:5555"
+];
 var corsOptions = {
   origin: function(origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
