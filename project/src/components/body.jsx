@@ -67,7 +67,7 @@ class Body extends Component {
   search = (type, input) => {
     var books = [];
     this.state.data.map(book => {
-      if (book[type] && book[type].toLowerCase().includes(input))
+      if (book[type] && book[type].toLowerCase().includes(input.toLowerCase()))
         books.push(book);
     });
     this.setState({ display: books, 
