@@ -20,7 +20,8 @@ class Register extends Component {
           alert("Register Successfully");
           this.props.login(json);
         } else alert("User already exist.");
-        console.log(res);
+      /// This is unsecure and prints sensitive information to javascript console!!!  
+      ///console.log(res);
       })
       .catch(err => {
         console.log(err);
