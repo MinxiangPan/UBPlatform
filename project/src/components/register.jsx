@@ -13,6 +13,10 @@ class Register extends Component {
   };
 
   putDataToUserDB = json => {
+    if (this.state.username == "" || this.state.email == "" || this.state.firstname == "" || this.state.lastname == "" || this.state.password == "" || this.state.username == null || this.state.email == null || this.state.firstname == null || this.state.lastname == null || this.state.password == null) {
+      alert ("All fields are required.")
+    }
+    else {
     axios
       .post(this.props.api+"/putUser", json)
       .then(res => {
@@ -24,7 +28,7 @@ class Register extends Component {
       })
       .catch(err => {
         console.log(err);
-      });
+      });}
   };
 
   render() {
