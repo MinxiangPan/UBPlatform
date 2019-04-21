@@ -58,7 +58,7 @@ class BookCardInfo extends Component {
               <ModalHeader> Book Details </ModalHeader>
               <ModalBody>
                 <div>Book Author: </div>
-                <h5> Junjie Chen</h5>
+                <h5> {this.props.bookInfo.author}</h5>
 
                 <div>Book edition: </div>
                 <h5> Third edition</h5>
@@ -72,10 +72,7 @@ class BookCardInfo extends Component {
                 <div>Book Price: </div>
                 <h5> {this.props.bookInfo.price}</h5>
                 <div>Book Descrption: </div>
-                <h5>
-                  {" "}
-                  Features: 200 hard puzzles Big grids for easy solving
-                  Introduction by legendary puzzlemaster Will Shortz
+                <h5>{this.props.bookInfo.description}
                 </h5>
               </ModalBody>
               <ModalFooter>
