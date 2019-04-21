@@ -66,7 +66,7 @@ class Footer extends Component {
             style={{ color: "white" }}
           >
             <p>© 2019 Copyright</p>
-            <a href="https://www.google.com/"> www.ubplatform.com</a>
+            <a href="https://www.matpan.com/UBPlatform/#home"> www.ubplatform.com</a>
           </div>
           <div class="icon">
             <SocialIcon url="http://twitter.com/" />
