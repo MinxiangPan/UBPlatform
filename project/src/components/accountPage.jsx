@@ -110,7 +110,7 @@ class AccountPage extends Component {
           <label>
             Current Password:
             <input
-              type="text"
+              type="password"
               onChange={e => this.setState({ password: e.target.value })}
               placeholder=""
               style={{ width: "200px" }}
@@ -119,7 +119,7 @@ class AccountPage extends Component {
           <label>
             New Password:
             <input
-              type="text"
+              type="password"
               onChange={e => this.setState({ newPassword: e.target.value })}
               placeholder=""
               style={{ width: "200px" }}
