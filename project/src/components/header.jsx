@@ -196,11 +196,26 @@ class Header extends Component {
         style={{ marginBottom: 10 }}
       >
         <Navbar.Brand href="#home">
-          UB Platform
+          
+          <Nav.Link
+              href="#home"
+              onSelect={() => {
+                this.props.setContent(<Body api={this.props.api} />);
+              }}
+            >
+              UB Platform
+              
           <img
+
+
+
             src="https://img.icons8.com/doodle/48/000000/books.png"
             style={{ width: 30 }}
+
           />
+
+            </Nav.Link>
+
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
