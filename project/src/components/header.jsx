@@ -226,7 +226,7 @@ class Header extends Component {
             <Nav.Link
               href="#reportPage"
               onSelect={() => {
-                this.props.setContent(<ReportPage />);
+                this.props.setContent(<ReportPage api={this.props.api} />);
               }}
             >
               Report
