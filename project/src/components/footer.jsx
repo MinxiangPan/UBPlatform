@@ -30,7 +30,7 @@ class Footer extends Component {
                     <a href="#!">Join Team</a>
                   </li>
                   <li>
-                    <a href="#!">Seek Career</a>
+                    <a href="https://angel.co/ub-platform">Seek Career</a>
                   </li>
                 </ul>
               </div>
@@ -69,9 +69,9 @@ class Footer extends Component {
             <a href="https://www.google.com/"> www.ubplatform.com</a>
           </div>
           <div class="icon">
-            <SocialIcon url="http://twitter.com/" />
             <SocialIcon url="http://facebook.com/" />
-            <SocialIcon url="http://linkedin.com/" />
+            <SocialIcon url="https://twitter.com/PlatformUb?lang=en" />
+            <SocialIcon url="https://www.instagram.com/markhalobuubplatform/" />
           </div>
         </footer>
       </div>
