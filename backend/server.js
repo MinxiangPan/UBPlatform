@@ -89,12 +89,26 @@ router.delete("/deleteByIdData", (req, res) => {
 // this method adds new data in our database
 router.post("/putData", (req, res) => {
   let data = new Data();
-  const { title, price, course, url, owner } = req.body;
+  const {
+    title,
+    price,
+    course,
+    url,
+    owner,
+    edition,
+    email,
+    description,
+    author
+  } = req.body;
   data.title = title;
   data.price = price;
   data.course = course;
-  data.owner = owner;
+  data.edition = edition;
   data.url = url;
+  data.owner = owner;
+  data.author = author;
+  data.email = email;
+  data.description = description;
   data.save(err => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true });
@@ -295,11 +309,11 @@ router.post("/getInterests", (req, res) => {
 
 passwordHashing = (password, salt) => {
   return sha256(password + salt);
-}
+};
 
 exports.passwordHashing = (password, salt) => {
   return sha256(password + salt);
-}
+};
 
 // append /api for our http requests
 app.use("/api", router);

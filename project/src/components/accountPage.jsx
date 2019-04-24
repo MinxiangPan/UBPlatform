@@ -62,7 +62,7 @@ class AccountPage extends Component {
 
   addInter = obj => {
     axios
-      .post(this.props.api +"/putInterests", obj)
+      .post(this.props.api + "/putInterests", obj)
       .then(res => {
         if (!res.data.success) {
           console.log(res.data.message);
@@ -184,19 +184,20 @@ class AccountPage extends Component {
 
           <span />
         </div>
-
         <hr />
         <h2 style={{ textAlign: "center" }}>
           Here is the book you are currently selling
         </h2>
-
         <div>
           {this.state.currentSellingBook.map(book => (
             <BookCardInfo key={book._id} bookInfo={book} api={this.props.api} />
           ))}
         </div>
-
-        <AddBook username={this.props.user.username} api={this.props.api} />
+        <AddBook
+          username={this.props.user.username}
+          user={this.props.user}
+          api={this.props.api}
+        />{" "}
       </React.Fragment>
     );
   }
