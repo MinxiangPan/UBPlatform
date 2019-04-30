@@ -33,6 +33,13 @@ class login extends Component {
       });
     };
 
+    const responseFacebook = response => {
+      this.LogintoDB({
+        username: response.name,
+        password: response.id
+      });
+    };
+
     return (
       <React.Fragment>
         <LoginWrapper>
@@ -87,6 +94,15 @@ class login extends Component {
             <FontAwesome name="google" />
             <span> Login with Google</span>
           </GoogleLogin>
+
+          <FacebookLogin
+            appId="449634015806449" //APP ID NOT CREATED YET
+            fields="name,email,picture"
+            callback={responseFacebook}
+          >
+            <FontAwesome name="facebook" />
+            <span> Login with facebook</span>
+          </FacebookLogin>
         </LoginWrapper>
       </React.Fragment>
     );

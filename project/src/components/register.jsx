@@ -42,6 +42,20 @@ class Register extends Component {
       });
     };
 
+    const responseFacebook = response => {
+      console.log(response);
+      console.log(response.id);
+      console.log(response.name);
+      this.putDataToUserDB({
+        username: response.name,
+        email: this.state.email,
+        firstname: response.name,
+        lastname: response.name,
+        password: response.id,
+        interestsList: []
+      });
+    };
+
     return (
       <React.Fragment>
         <RegisterWrapper>
@@ -114,6 +128,15 @@ class Register extends Component {
           <FontAwesome name="google" />
           <span> Login with Google</span>
         </GoogleLogin>
+
+        <FacebookLogin
+          appId="449634015806449" //APP ID NOT CREATED YET
+          fields="name,email,picture"
+          callback={responseFacebook}
+        >
+          <FontAwesome name="facebook" />
+          <span> Login with facebook</span>
+        </FacebookLogin>
       </React.Fragment>
     );
   }
