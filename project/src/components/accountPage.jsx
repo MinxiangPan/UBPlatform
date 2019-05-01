@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import AddBook from "./addBook";
 import BookCardInfo from "./bookCardInfo";
 import axios from "axios";
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 class AccountPage extends Component {
   state = {

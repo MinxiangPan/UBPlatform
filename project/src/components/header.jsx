@@ -15,6 +15,9 @@ import BookCardInfo from "./bookCardInfo";
 import InterestsPage from "./interestsPage";
 import { setTimeout } from "timers";
 import ReportPage from "./reportPage";
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 class Header extends Component {
   state = {
@@ -56,6 +59,8 @@ class Header extends Component {
         </Button>
       </React.Fragment>
     );
+    this.setState({user: cookies.get('users')});
+    
   }
 
   setTopRight = content => {
@@ -78,6 +83,7 @@ class Header extends Component {
 
     this.setState({ user: users, currInterests: users.interestsList });
     this.randomBook();
+    cookies.set('users', users, {path : '/'});
     this.props.setContent(
       <AccountPage
         user={users}
@@ -102,6 +108,7 @@ class Header extends Component {
   signOut = () => {
     this.props.setContent(<Body api={this.props.api} />);
     this.setState({ user: null, currInterests: [], randomBook: [] });
+    cookies.remove('users');
     this.setTopRight(
       <React.Fragment>
         <Button
