@@ -15,12 +15,11 @@ import BookCardInfo from "./bookCardInfo";
 import InterestsPage from "./interestsPage";
 import { setTimeout } from "timers";
 import ReportPage from "./reportPage";
+import Demo from "./demo";
 import logo1 from "../logo1.png";
 import logo2 from "../logo2.png";
 import logo3 from "../logo3.png";
 import logo4 from "../logo4.png";
-import Demo from "./Demo";
-
 class Header extends Component {
   state = {
     input: null,
@@ -224,15 +223,6 @@ class Header extends Component {
             </Nav.Link>
 
             <Nav.Link
-              href="#demo"
-              onSelect={() => {
-                this.props.setContent(<Demo />);
-              }}
-            >
-              Demo
-            </Nav.Link>
-
-            <Nav.Link
               href="#reportPage"
               onSelect={() => {
                 this.props.setContent(<ReportPage />);
@@ -255,7 +245,16 @@ class Header extends Component {
             >
               InterestsPage
             </Nav.Link>
+            <Nav.Link
+              href="#demo"
+              onSelect={() => {
+                this.props.setContent(<Demo />);
+              }}
+            >
+              Demo
+            </Nav.Link>
           </Nav>
+
           <Form inline>{this.state.topRight}</Form>
         </Navbar.Collapse>
       </Navbar>

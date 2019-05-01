@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import PolicyPage from "./policyPage.jsx";
+import FaqPage from "./faq.jsx";
 import { Nav } from "react-bootstrap";
 import { SocialIcon } from "react-social-icons";
 import "./footerStyle.css";
@@ -27,10 +28,10 @@ class Footer extends Component {
 
                 <ul className="list-unstyled">
                   <li>
-                    <a href="https://angel.co/ub-platform">Join Team</a>
+                    <a href="#!">Join Team</a>
                   </li>
                   <li>
-                    <a href="https://angel.co/ub-platform">Seek Career</a>
+                    <a href="#!">Seek Career</a>
                   </li>
                 </ul>
               </div>
@@ -61,6 +62,17 @@ class Footer extends Component {
               Policy
             </Nav.Link>
           </Nav>
+
+          <Nav>
+            <Nav.Link
+              href="#faqPage"
+              onSelect={() => {
+                this.props.setContent(<FaqPage />);
+              }}
+            >
+              Frequently Asked Questions
+            </Nav.Link>
+          </Nav>
           <div
             className="footer-copyright text-center py-3"
             style={{ color: "white" }}
@@ -69,9 +81,12 @@ class Footer extends Component {
             <a href="https://www.google.com/"> www.ubplatform.com</a>
           </div>
           <div class="icon">
-            <SocialIcon url="http://facebook.com/" />
-            <SocialIcon url="https://twitter.com/PlatformUb?lang=en" />
-            <SocialIcon url="https://www.instagram.com/markhalobuubplatform/" />
+            <SocialIcon url="http://twitter.com/" />
+            <SocialIcon
+              target="_blank"
+              url="https://www.facebook.com/UB-Platform-678441212608636/?modal=admin_todo_tour"
+            />
+            <SocialIcon url="http://linkedin.com/" />
           </div>
         </footer>
       </div>

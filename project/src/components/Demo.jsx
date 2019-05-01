@@ -7,9 +7,11 @@ class PolicyPage extends Component {
   render() {
     return (
       <div>
+        <marquee>This platform was found by a group of UB students</marquee>
+
         <Carousel>
           <div>
-            <img src={require("./images/display2.png")} />
+            {/* <img src={require("./images/display2.png")} /> */}
             <p className="legend">Current Selling Book in UB Platform</p>
           </div>
           <div>
@@ -21,6 +23,44 @@ class PolicyPage extends Component {
             <p className="legend">Legend 3</p>
           </div>
         </Carousel>
+        <div class="position-relative overflow-hidden p-8 p-md-8 m-md-8 text-center bg-light">
+          <div class="col-md-8 p-lg-8 mx-auto my-8">
+            <h1 class="display-8 font-weight-normal">Need Help?</h1>
+            <p class="lead font-weight-normal">
+              If you are new to our website, you can check our some tutorial for
+              the functionalities of our platform
+            </p>
+
+            <div class="position-relative overflow-hidden p-8 p-md-8 m-md-8 text-center bg-light">
+              <div class="col-md-8 p-lg-8 mx-auto my-8">
+                <h1 class="display-10 font-weight-normal">
+                  How to register an account and login to your account?
+                </h1>
+                <p class="lead font-weight-normal">
+                  You can register an account by clicking the icon in the upper
+                  right section. You can login to you account by click the icon
+                  in the header
+                </p>
+
+                <h1 class="display-10 font-weight-normal">
+                  Procedure of buying and selling a book.
+                </h1>
+                <p class="lead font-weight-normal">
+                  <li>
+                    In order to become a seller, you have to register an account
+                    first. Once you are log in, you can go to account page and
+                    start selling a book.
+                  </li>
+                  <li>
+                    In order to buy an item, you are not required to register an
+                    account. You can contact seller directly by clicking more
+                    detail on a book to see the contact infomation.
+                  </li>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div>
           <h1 style={{ textAlign: "center" }}>Our Tech Stack</h1>
@@ -49,18 +89,6 @@ class PolicyPage extends Component {
             style={{ marginLeft: "6%" }}
             width="230"
           />
-
-          <p>
-            UBPlatform provides students a online platform to buy and sell items
-            with no charge. If you are a student, you must have experience
-            spending lots of money on buying expensive first-hand text-book in
-            bookstore. Don’t worry, within UBPlatform, you can find all kinds of
-            book posted by every other users, no matter for first-hand,
-            second-hand or any kinds. Moreover, there is no rule of pricing a
-            book, cheaper is better. If you find anything unproper in
-            UBPlatform, feel free to email us in report page. Feel free to
-            explore your interested items in UBPlatform!
-          </p>
         </div>
       </div>
     );
