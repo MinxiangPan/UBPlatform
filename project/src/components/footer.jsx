@@ -27,7 +27,7 @@ class Footer extends Component {
 
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#!">Join Team</a>
+                    <a href="https://angel.co/ub-platform">Join Team</a>
                   </li>
                   <li>
                     <a href="https://angel.co/ub-platform">Seek Career</a>
