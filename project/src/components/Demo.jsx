@@ -11,7 +11,7 @@ class PolicyPage extends Component {
 
         <Carousel>
           <div>
-            {/* <img src={require("./images/display2.png")} /> */}
+            <img src={require("./images/display2.png")} />
             <p className="legend">Current Selling Book in UB Platform</p>
           </div>
           <div>
