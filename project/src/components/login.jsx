@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import { LoginWrapper, LoginBox, Input, Button } from "./loginStyle";
 import axios from "axios";
-import ResetPass from './resetPass';
+import ResetPass from "./resetPass";
+import FacebookLogin from "react-facebook-login";
+import ReactDOM from "react-dom";
+import GoogleLogin from "react-google-login";
+import FontAwesome from "react-fontawesome";
 
 class login extends Component {
   state = { username: "", password: "" };
 
   LogintoDB = json => {
     axios
-      .post(this.props.api +"/login", json)
+      .post(this.props.api + "/login", json)
       .then(res => {
         if (!res.data.success && res.data.user == null) {
           alert("Username or Password is incorrect.");
@@ -22,6 +26,20 @@ class login extends Component {
   };
 
   render() {
+    const responseGoogle = response => {
+      this.LogintoDB({
+        username: response.profileObj.name,
+        password: response.El
+      });
+    };
+
+    const responseFacebook = response => {
+      this.LogintoDB({
+        username: response.name,
+        password: response.id
+      });
+    };
+
     return (
       <React.Fragment>
         <LoginWrapper>
@@ -53,8 +71,38 @@ class login extends Component {
             >
               Login to System
             </Button>
-            <a onClick={()=>this.props.setContent(<ResetPass setContent={this.props.setContent} api={this.props.api}/>)}>Forget Password?</a>
+            <a
+              onClick={() =>
+                this.props.setContent(
+                  <ResetPass
+                    setContent={this.props.setContent}
+                    api={this.props.api}
+                  />
+                )
+              }
+            >
+              Forget Password?
+            </a>
           </LoginBox>
+          <GoogleLogin
+            clientId={
+              "943603281803-2glvdsuq90n8lbcttmlkk63t0nh1amnl.apps.googleusercontent.com"
+            }
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+          >
+            <FontAwesome name="google" />
+            <span> Login with Google</span>
+          </GoogleLogin>
+
+          <FacebookLogin
+            appId="449634015806449" //APP ID NOT CREATED YET
+            fields="name,email,picture"
+            callback={responseFacebook}
+          >
+            <FontAwesome name="facebook" />
+            <span> Login with facebook</span>
+          </FacebookLogin>
         </LoginWrapper>
       </React.Fragment>
     );
