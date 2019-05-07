@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import {
   Button,
   UncontrolledPopover,
@@ -50,12 +49,6 @@ class BookCardInfo extends Component {
             <button class="btn btn-primary" onClick={this.openModal.bind(this)}>
               More details
             </button>
-            {console.log(this.props.username)}
-            {this.props.username ? <button className="btn btn-primary" onClick={()=>{
-              axios.delete(this.props.api + "/deleteByIdData", {
-                data: { owner: this.props.username, id: this.props.bookInfo._id }
-              });
-            }}>Delete</button> : null}
             <Modal
               isOpen={this.state.modalIsOpen}
               onAfterOpen={this.afterOpenModal}

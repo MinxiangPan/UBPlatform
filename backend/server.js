@@ -307,36 +307,6 @@ router.post("/getInterests", (req, res) => {
   });
 });
 
-router.post("/report", (req, res)=>{
-  console.log(req.body);
-  var reqB = req.body;
-  if(reqB.seller && reqB.email && reqB.book && reqB.reason){
-    mail = {
-      from: "platformtest147@gmail.com",
-      to: "platformtest147@gmail.com",
-      subject: "!Report!",
-      text:
-        "Seller:\n" +
-        reqB.seller +
-        "\n" +
-        "Email:\n" +
-        reqB.email +
-        "\n" +
-        "Book:\n" +
-        reqB.book +
-        "\n" +
-        "Reason:\n" +
-        reqB.reason +
-        "\n"
-    };
-    transporter.sendMail(mail);
-    return res.json({success: true});
-  }
-  else{
-    return res.json({success: false, message: "You need to fill up the require fields."});
-  }
-});
-
 passwordHashing = (password, salt) => {
   return sha256(password + salt);
 };
