@@ -152,14 +152,16 @@ class Register extends Component {
   };
 
   responseFacebook = response => {
-    this.putDataToUserDB({
-      username: response.name,
-      email: this.state.email,
-      firstname: response.name,
-      lastname: response.name,
-      password: response.id,
-      interestsList: []
-    });
+    if(this.state.email != ""){
+      this.putDataToUserDB({
+        username: response.name,
+        firstname: response.name,
+        email: this.state.email,
+        lastname: response.name,
+        password: response.id,
+        interestsList: []
+      });
+    }
   };
 
   render() {

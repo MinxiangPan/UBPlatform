@@ -17,6 +17,12 @@ import { setTimeout } from "timers";
 import ReportPage from "./reportPage";
 import Cookies from 'universal-cookie';
 
+import Demo from "./Demo";
+import logo1 from "./images/logo1.png";
+// import logo2 from "../logo2.png";
+// import logo3 from "../logo3.png";
+// import logo4 from "../logo4.png";
+
 const cookies = new Cookies();
 
 class Header extends Component {
@@ -208,7 +214,7 @@ class Header extends Component {
             style={{ width: 30 }}
           />
         </Navbar.Brand>
-
+e2
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -251,6 +257,14 @@ class Header extends Component {
               }}
             >
               InterestsPage
+            </Nav.Link>
+            <Nav.Link
+              href="#demo"
+              onSelect={() => {
+                this.props.setContent(<Demo />);
+              }}
+            >
+              Demo
             </Nav.Link>
           </Nav>
           <Form inline>{this.state.topRight}</Form>
