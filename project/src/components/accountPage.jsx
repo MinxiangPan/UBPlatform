@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import AddBook from "./addBook";
 import BookCardInfo from "./bookCardInfo";
 import axios from "axios";
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 class AccountPage extends Component {
   state = {
@@ -192,10 +195,9 @@ class AccountPage extends Component {
 
         <div>
           {this.state.currentSellingBook.map(book => (
-            <BookCardInfo key={book._id} bookInfo={book} api={this.props.api} />
+            <BookCardInfo key={book._id} bookInfo={book} api={this.props.api} username={this.props.user.username} />
           ))}
         </div>
-
         <AddBook username={this.props.user.username} api={this.props.api} />
       </React.Fragment>
     );
