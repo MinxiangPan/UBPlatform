@@ -12,23 +12,23 @@ self.__precacheManifest = [
     "url": "/UBPlatform/static/js/runtime~main.4dabe35e.js"
   },
   {
-    "revision": "b3396cd485a6a9e7adc7",
-    "url": "/UBPlatform/static/js/main.0ef8eef7.chunk.js"
+    "revision": "e356fb67792d7bbfc154",
+    "url": "/UBPlatform/static/js/main.05de3d79.chunk.js"
   },
   {
-    "revision": "b56d7d316381dbed7f67",
-    "url": "/UBPlatform/static/js/2.26f8b1bd.chunk.js"
+    "revision": "c7b98a8046ec4c38f845",
+    "url": "/UBPlatform/static/js/2.b0cdfcde.chunk.js"
   },
   {
-    "revision": "b3396cd485a6a9e7adc7",
+    "revision": "e356fb67792d7bbfc154",
     "url": "/UBPlatform/static/css/main.e29e3876.chunk.css"
   },
   {
-    "revision": "b56d7d316381dbed7f67",
-    "url": "/UBPlatform/static/css/2.1a863357.chunk.css"
+    "revision": "c7b98a8046ec4c38f845",
+    "url": "/UBPlatform/static/css/2.20815b04.chunk.css"
   },
   {
-    "revision": "b2bea28fb97b4ef5c7fbdb1b290ccb3e",
+    "revision": "eb94ef1bd5a67399e560bec7849c7773",
     "url": "/UBPlatform/index.html"
   }
 ];
