@@ -25,20 +25,25 @@ class login extends Component {
       });
   };
 
-  render() {
-    const responseGoogle = response => {
+  responseGoogle = response => {
+    if(response != null && response.name != null && response.id != null){
       this.LogintoDB({
         username: response.profileObj.name,
         password: response.El
       });
-    };
+    }
+  };
 
-    const responseFacebook = response => {
+  responseFacebook = response => {
+    if(response != null && response.name != null && response.id != null){
       this.LogintoDB({
         username: response.name,
         password: response.id
       });
-    };
+    }
+  };
+
+  render() {  
 
     return (
       <React.Fragment>
@@ -88,8 +93,8 @@ class login extends Component {
             clientId={
               "943603281803-2glvdsuq90n8lbcttmlkk63t0nh1amnl.apps.googleusercontent.com"
             }
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
+            onSuccess={this.responseGoogle}
+            onFailure={this.responseGoogle}
           >
             <FontAwesome name="google" />
             <span> Login with Google</span>
@@ -98,7 +103,7 @@ class login extends Component {
           <FacebookLogin
             appId="449634015806449" //APP ID NOT CREATED YET
             fields="name,email,picture"
-            callback={responseFacebook}
+            callback={this.responseFacebook}
           >
             <FontAwesome name="facebook" />
             <span> Login with facebook</span>

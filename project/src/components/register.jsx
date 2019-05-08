@@ -30,31 +30,29 @@ class Register extends Component {
       });
   };
 
-  render() {
-    const responseGoogle = response => {
-      this.putDataToUserDB({
-        username: response.profileObj.name,
-        email: response.profileObj.email,
-        firstname: response.profileObj.givenName,
-        lastname: response.profileObj.familyName,
-        password: response.El,
-        interestsList: []
-      });
-    };
+  responseGoogle = response => {
+    this.putDataToUserDB({
+      username: response.profileObj.name,
+      email: response.profileObj.email,
+      firstname: response.profileObj.givenName,
+      lastname: response.profileObj.familyName,
+      password: response.El,
+      interestsList: []
+    });
+  };
 
-    const responseFacebook = response => {
-      console.log(response);
-      console.log(response.id);
-      console.log(response.name);
-      this.putDataToUserDB({
-        username: response.name,
-        email: this.state.email,
-        firstname: response.name,
-        lastname: response.name,
-        password: response.id,
-        interestsList: []
-      });
-    };
+  responseFacebook = response => {
+    this.putDataToUserDB({
+      username: response.name,
+      email: this.state.email,
+      firstname: response.name,
+      lastname: response.name,
+      password: response.id,
+      interestsList: []
+    });
+  };
+
+  render() {
 
     return (
       <React.Fragment>
@@ -122,8 +120,8 @@ class Register extends Component {
           clientId={
             "943603281803-2glvdsuq90n8lbcttmlkk63t0nh1amnl.apps.googleusercontent.com"
           }
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
+          onSuccess={this.responseGoogle}
+          onFailure={this.responseGoogle}
         >
           <FontAwesome name="google" />
           <span> Login with Google</span>
@@ -132,7 +130,7 @@ class Register extends Component {
         <FacebookLogin
           appId="449634015806449" //APP ID NOT CREATED YET
           fields="name,email,picture"
-          callback={responseFacebook}
+          callback={this.responseFacebook}
         >
           <FontAwesome name="facebook" />
           <span> Login with facebook</span>
