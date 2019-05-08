@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { RegisterWrapper, RegisterBox, Input, Button } from "./registerStyle";
 import axios from "axios";
 import FacebookLogin from "react-facebook-login";
+import ReactDOM from "react-dom";
+import GoogleLogin from "react-google-login";
+import FontAwesome from "react-fontawesome";
 
 class Register extends Component {
   state = {
@@ -14,7 +17,7 @@ class Register extends Component {
 
   putDataToUserDB = json => {
     axios
-      .post(this.props.api+"/putUser", json)
+      .post(this.props.api + "/putUser", json)
       .then(res => {
         if (res.data.success) {
           alert("Register Successfully");
@@ -28,6 +31,31 @@ class Register extends Component {
   };
 
   render() {
+    const responseGoogle = response => {
+      this.putDataToUserDB({
+        username: response.profileObj.name,
+        email: response.profileObj.email,
+        firstname: response.profileObj.givenName,
+        lastname: response.profileObj.familyName,
+        password: response.El,
+        interestsList: []
+      });
+    };
+
+    const responseFacebook = response => {
+      console.log(response);
+      console.log(response.id);
+      console.log(response.name);
+      this.putDataToUserDB({
+        username: response.name,
+        email: this.state.email,
+        firstname: response.name,
+        lastname: response.name,
+        password: response.id,
+        interestsList: []
+      });
+    };
+
     return (
       <React.Fragment>
         <RegisterWrapper>
@@ -73,6 +101,7 @@ class Register extends Component {
                 placeholder="password"
               />
             </label>
+
             <Button
               onClick={() =>
                 this.putDataToUserDB({
@@ -89,6 +118,25 @@ class Register extends Component {
             </Button>
           </RegisterBox>
         </RegisterWrapper>
+        <GoogleLogin
+          clientId={
+            "943603281803-2glvdsuq90n8lbcttmlkk63t0nh1amnl.apps.googleusercontent.com"
+          }
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+        >
+          <FontAwesome name="google" />
+          <span> Login with Google</span>
+        </GoogleLogin>
+
+        <FacebookLogin
+          appId="449634015806449" //APP ID NOT CREATED YET
+          fields="name,email,picture"
+          callback={responseFacebook}
+        >
+          <FontAwesome name="facebook" />
+          <span> Login with facebook</span>
+        </FacebookLogin>
       </React.Fragment>
     );
   }
