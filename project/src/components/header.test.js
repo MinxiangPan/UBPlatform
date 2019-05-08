@@ -15,7 +15,7 @@ describe('Header Test Case', () => {
     });
 
     it('Test search case one', () => {
-        header.instance().login({username: "test02", password: "test02"});
+        header.instance().login({username: "test02", password: "test02", interestsList: []});
         expect(cookies.get('users').username).toEqual("test02");
     });
 
