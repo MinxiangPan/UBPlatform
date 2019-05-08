@@ -1,16 +1,8 @@
-.footer {
-  position: relative;
-  height: 100px;
-  margin-top: 400px;
-  clear: both;
-}
-.icon {
-  text-align: center;
-  position: relative;
-}
-.google-button {
-  height: 30px;
-  width: 270px;
+.google-button1 {
+  margin-left: 7%;
+  float: left;
+  height: 40px;
+  width: 110px;
   border-width: 0;
   background: white;
   color: #737373;
@@ -23,29 +15,30 @@
   padding: 0;
 }
 
-.google-button__icon {
+.google-button__icon1 {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  margin: 0px 0 8px 8px;
+  margin: 0px 0 5px 20px;
   width: 18px;
   height: 18px;
   box-sizing: border-box;
 }
 
-.google-button__text {
+.google-button__text1 {
   display: inline-block;
-  vertical-align: middle;
-  padding: 0 24px;
+  padding: 10px 24px;
   font-size: 14px;
+  margin-left: -20%;
   font-weight: bold;
   font-family: "Roboto", arial, sans-serif;
 }
-.facebook-login {
-  height: 30px;
-  width: 270px;
+
+.facebook-login1 {
+  margin-left: -5%;
   display: inline-block;
   padding: 1px 10px;
+  padding-right: 17px;
   background-color: #4267b2;
   color: #ffffff;
   border-radius: 4px;
@@ -57,22 +50,32 @@
   transition-timing-function: ease-in-out;
 }
 
-.facebook-login-text {
-  margin-bottom: 5%;
+.facebook-login-text1 {
   display: inline-block;
-  vertical-align: middle;
-  padding: 0 24px;
+  padding: 0px;
   font-size: 14px;
-  font-weight: bold;
-  font-family: "Roboto", arial, sans-serif;
+  margin-top: 10%;
 }
 
-.facebook-icon > svg {
-  position: relative;
+.facebook-icon1 > svg {
   display: inline-block;
   vertical-align: middle;
-  margin: 0px 0 10px 23px;
+  margin-bottom: 5%;
   width: 18px;
   height: 18px;
   box-sizing: border-box;
+}
+
+.facebook-login:hover {
+  background-color: #365899;
+  transition-property: background-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+}
+
+.facebook-login:active {
+  background-color: #577fbc;
+  transition-duration: 40ms;
+  transition-property: background-color, box-shadow;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
 }

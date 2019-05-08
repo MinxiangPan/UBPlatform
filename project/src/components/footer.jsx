@@ -2,10 +2,14 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 import PolicyPage from "./policyPage.jsx";
 import { Nav } from "react-bootstrap";
+import TermsOfUse from "./termsOfUse.jsx";
 import { SocialIcon } from "react-social-icons";
 import "./footerStyle.css";
 
 class Footer extends Component {
+  handleScrollTop() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div className="footer">
@@ -53,12 +57,24 @@ class Footer extends Component {
           </div>
           <Nav>
             <Nav.Link
+              onClick={this.handleScrollTop}
               href="#policyPage"
               onSelect={() => {
                 this.props.setContent(<PolicyPage />);
               }}
             >
               Policy
+            </Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link
+              onClick={this.handleScrollTop}
+              href="#termsOfUse"
+              onSelect={() => {
+                this.props.setContent(<TermsOfUse />);
+              }}
+            >
+              Terms of Use
             </Nav.Link>
           </Nav>
           <div
