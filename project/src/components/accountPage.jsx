@@ -219,11 +219,7 @@ class AccountPage extends Component {
 
           <div>
             {this.state.currentSellingBook.map(book => (
-              <BookCardInfo
-                key={book._id}
-                bookInfo={book}
-                api={this.props.api}
-              />
+              <BookCardInfo key={book._id} bookInfo={book} api={this.props.api} username={this.props.user.username} />
             ))}
           </div>
 
