@@ -4,6 +4,7 @@ import axios from "axios";
 import { NavDropdown } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import PageButton from "./pageButton";
+import "../App.css";
 
 class Body extends Component {
   state = {
@@ -147,13 +148,14 @@ class Body extends Component {
     });
     document.getElementById("searchInput").value = "";
   };
+
   handleScrollTop() {
     window.scrollTo(0, 0);
   }
 
   render() {
     return (
-      <div>
+      <div class="body">
         <div style={{ paddingLeft: "38%" }}>
           <NavDropdown title={this.state.searchType} id="basic-nav-dropdown">
             <NavDropdown.Item
@@ -176,7 +178,12 @@ class Body extends Component {
             </NavDropdown.Item>
           </NavDropdown>
           <input
-            style={{ width: "45%" }}
+            style={{
+              top: "355px",
+              left: "575px",
+              height: "30px",
+              width: "300px"
+            }}
             type="text"
             id="searchInput"
             placeholder="Search"
@@ -195,14 +202,15 @@ class Body extends Component {
             Reset
           </Button>
         </div>
-        <hr />
+
+        <hr class="line" />
 
         <div>
           {this.state.pages.map(book => (
             <BookCardInfo key={book._id} bookInfo={book} api={this.props.api} />
           ))}
         </div>
-        <hr />
+        <hr class="line" />
         <div style={{ margin: "5px", marginLeft: "38%" }}>
           <Button
             style={{ margin: "5px" }}
