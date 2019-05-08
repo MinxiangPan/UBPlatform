@@ -1,17 +1,16 @@
 {
-  "main.css": "/UBPlatform/static/css/main.e9ebc994.chunk.css",
-  "main.js": "/UBPlatform/static/js/main.4fa7f880.chunk.js",
-  "main.js.map": "/UBPlatform/static/js/main.4fa7f880.chunk.js.map",
+  "main.css": "/UBPlatform/static/css/main.8d02c1b7.chunk.css",
+  "main.js": "/UBPlatform/static/js/main.24ca63dd.chunk.js",
+  "main.js.map": "/UBPlatform/static/js/main.24ca63dd.chunk.js.map",
   "runtime~main.js": "/UBPlatform/static/js/runtime~main.4dabe35e.js",
   "runtime~main.js.map": "/UBPlatform/static/js/runtime~main.4dabe35e.js.map",
-  "static/css/2.1a863357.chunk.css": "/UBPlatform/static/css/2.1a863357.chunk.css",
-  "static/js/2.2f40afff.chunk.js": "/UBPlatform/static/js/2.2f40afff.chunk.js",
-  "static/js/2.2f40afff.chunk.js.map": "/UBPlatform/static/js/2.2f40afff.chunk.js.map",
+  "static/css/2.e673c61f.chunk.css": "/UBPlatform/static/css/2.e673c61f.chunk.css",
+  "static/js/2.c38c194c.chunk.js": "/UBPlatform/static/js/2.c38c194c.chunk.js",
+  "static/js/2.c38c194c.chunk.js.map": "/UBPlatform/static/js/2.c38c194c.chunk.js.map",
   "index.html": "/UBPlatform/index.html",
-  "precache-manifest.cfaea908be48fee468b3f1a361d5cf53.js": "/UBPlatform/precache-manifest.cfaea908be48fee468b3f1a361d5cf53.js",
+  "precache-manifest.a09bd22f927df08b5fad02bc75d029a2.js": "/UBPlatform/precache-manifest.a09bd22f927df08b5fad02bc75d029a2.js",
   "service-worker.js": "/UBPlatform/service-worker.js",
-  "static/css/2.1a863357.chunk.css.map": "/UBPlatform/static/css/2.1a863357.chunk.css.map",
-  "static/css/main.e9ebc994.chunk.css.map": "/UBPlatform/static/css/main.e9ebc994.chunk.css.map",
-  "static/media/default-profile.png": "/UBPlatform/static/media/default-profile.3cbc128f.png",
-  "static/media/display2.png": "/UBPlatform/static/media/display2.430e8796.png"
+  "static/css/2.e673c61f.chunk.css.map": "/UBPlatform/static/css/2.e673c61f.chunk.css.map",
+  "static/css/main.8d02c1b7.chunk.css.map": "/UBPlatform/static/css/main.8d02c1b7.chunk.css.map",
+  "static/media/default-profile.png": "/UBPlatform/static/media/default-profile.3cbc128f.png"
 }
