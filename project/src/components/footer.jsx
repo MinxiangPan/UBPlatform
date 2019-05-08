@@ -2,10 +2,14 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 import PolicyPage from "./policyPage.jsx";
 import { Nav } from "react-bootstrap";
+import TermsOfUse from "./termsOfUse.jsx";
 import { SocialIcon } from "react-social-icons";
 import "./footerStyle.css";
 
 class Footer extends Component {
+  handleScrollTop() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div className="footer">
@@ -14,8 +18,8 @@ class Footer extends Component {
             <div className="row">
               <div className="col-md-6 mt-md-0 mt-3" style={{ color: "white" }}>
                 <h5 className="text-uppercase">Contact US</h5>
-                <p>Email: Please contact us xliu72@buffalo.edu</p>
-                <p>Phone: 4152839557</p>
+                <p>Email: Please contact us platformtest147@gmail.com</p>
+                <p>Phone: Coming soon</p>
               </div>
 
               <hr className="clearfix w-100 d-md-none pb-3" />
@@ -53,6 +57,7 @@ class Footer extends Component {
           </div>
           <Nav>
             <Nav.Link
+              onClick={this.handleScrollTop}
               href="#policyPage"
               onSelect={() => {
                 this.props.setContent(<PolicyPage />);
@@ -61,12 +66,23 @@ class Footer extends Component {
               Policy
             </Nav.Link>
           </Nav>
+          <Nav>
+            <Nav.Link
+              onClick={this.handleScrollTop}
+              href="#termsOfUse"
+              onSelect={() => {
+                this.props.setContent(<TermsOfUse />);
+              }}
+            >
+              Terms of Use
+            </Nav.Link>
+          </Nav>
           <div
             className="footer-copyright text-center py-3"
             style={{ color: "white" }}
           >
             <p>© 2019 Copyright</p>
-            <a href="https://www.google.com/"> www.ubplatform.com</a>
+            <a href="https://www.matpan.com/UBPlatform/"> UB Platform</a>
           </div>
           <div class="icon">
             <SocialIcon url="http://twitter.com/" />

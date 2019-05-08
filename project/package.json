@@ -7,24 +7,30 @@
     "ajv-keywords": "^3.4.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.3.34",
     "gatsby-plugin-react-helmet": "^3.0.6",
     "graphql": "^14.2.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "kleur": "^3.0.2",
     "mongodb": "^3.1.13",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.5",
+    "react-cookie": "^3.1.2",
     "react-dom": "^16.8.4",
     "react-facebook-login": "^4.1.1",
+    "react-fontawesome": "^1.6.1",
+    "react-google-login": "^5.0.4",
     "react-headroom": "^2.2.4",
     "react-helmet": "^5.2.0",
     "react-modal": "^3.8.1",
+    "react-responsive-carousel": "^3.1.49",
+    "react-router": "^5.0.0",
     "react-scripts": "^2.1.8",
     "react-table": "^6.9.2",
     "reactstrap": "^7.1.0",
     "styled-components": "^4.1.3",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "universal-cookie": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,7 +41,7 @@
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:3001",
-  "homepage": "http://minxiangpan.github.io/UBPlatform",
+  "homepage": "https://minxiangpan.github.io/UBPlatform",
   "eslintConfig": {
     "extends": "react-app"
   },

@@ -8,3 +8,71 @@
   text-align: center;
   position: relative;
 }
+.google-button {
+  height: 30px;
+  width: 270px;
+  border-width: 0;
+  background: white;
+  color: #737373;
+  border-radius: 5px;
+  white-space: nowrap;
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.05);
+  transition-property: background-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  padding: 0;
+}
+
+.google-button__icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0 8px 8px;
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+}
+
+.google-button__text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Roboto", arial, sans-serif;
+}
+.facebook-login {
+  height: 30px;
+  width: 270px;
+  display: inline-block;
+  padding: 1px 10px;
+  background-color: #4267b2;
+  color: #ffffff;
+  border-radius: 4px;
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 0.25px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.facebook-login-text {
+  margin-bottom: 5%;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Roboto", arial, sans-serif;
+}
+
+.facebook-icon > svg {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0 10px 23px;
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+}

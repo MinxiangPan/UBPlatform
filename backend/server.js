@@ -25,7 +25,9 @@ var transporter = nodemailer.createTransport({
 const whitelist = [
   "http://localhost:3000",
   "http://localhost:3001",
-  "http://localhost:5555"
+  "http://localhost:5555",
+  "http://www.matpan.com/UBPlatform",
+  "https://www.matpan.com/UBPlatform"
 ];
 var corsOptions = {
   origin: function(origin, callback) {
@@ -87,12 +89,26 @@ router.delete("/deleteByIdData", (req, res) => {
 // this method adds new data in our database
 router.post("/putData", (req, res) => {
   let data = new Data();
-  const { title, price, course, url, owner } = req.body;
+  const {
+    title,
+    price,
+    course,
+    url,
+    owner,
+    edition,
+    email,
+    description,
+    author
+  } = req.body;
   data.title = title;
   data.price = price;
   data.course = course;
-  data.owner = owner;
+  data.edition = edition;
   data.url = url;
+  data.owner = owner;
+  data.author = author;
+  data.email = email;
+  data.description = description;
   data.save(err => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true });
@@ -291,13 +307,43 @@ router.post("/getInterests", (req, res) => {
   });
 });
 
+router.post("/report", (req, res)=>{
+  console.log(req.body);
+  var reqB = req.body;
+  if(reqB.seller && reqB.email && reqB.book && reqB.reason){
+    mail = {
+      from: "platformtest147@gmail.com",
+      to: "platformtest147@gmail.com",
+      subject: "!Report!",
+      text:
+        "Seller:\n" +
+        reqB.seller +
+        "\n" +
+        "Email:\n" +
+        reqB.email +
+        "\n" +
+        "Book:\n" +
+        reqB.book +
+        "\n" +
+        "Reason:\n" +
+        reqB.reason +
+        "\n"
+    };
+    transporter.sendMail(mail);
+    return res.json({success: true});
+  }
+  else{
+    return res.json({success: false, message: "You need to fill up the require fields."});
+  }
+});
+
 passwordHashing = (password, salt) => {
   return sha256(password + salt);
-}
+};
 
 exports.passwordHashing = (password, salt) => {
   return sha256(password + salt);
-}
+};
 
 // append /api for our http requests
 app.use("/api", router);
