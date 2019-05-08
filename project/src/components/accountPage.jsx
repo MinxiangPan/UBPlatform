@@ -108,7 +108,7 @@ class AccountPage extends Component {
           </div>
           <img
             // class={"img-box-user p-0"}
-            src={require("../images/default-profile.png")}
+            src={require("./images/default-profile.png")}
             alt={""}
             style={{
               marginLeft: "45%",
