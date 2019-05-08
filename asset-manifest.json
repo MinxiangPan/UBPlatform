@@ -1,16 +1,17 @@
 {
-  "main.css": "/UBPlatform/static/css/main.8d02c1b7.chunk.css",
-  "main.js": "/UBPlatform/static/js/main.24ca63dd.chunk.js",
-  "main.js.map": "/UBPlatform/static/js/main.24ca63dd.chunk.js.map",
+  "main.css": "/UBPlatform/static/css/main.e29e3876.chunk.css",
+  "main.js": "/UBPlatform/static/js/main.0ef8eef7.chunk.js",
+  "main.js.map": "/UBPlatform/static/js/main.0ef8eef7.chunk.js.map",
   "runtime~main.js": "/UBPlatform/static/js/runtime~main.4dabe35e.js",
   "runtime~main.js.map": "/UBPlatform/static/js/runtime~main.4dabe35e.js.map",
-  "static/css/2.e673c61f.chunk.css": "/UBPlatform/static/css/2.e673c61f.chunk.css",
-  "static/js/2.c38c194c.chunk.js": "/UBPlatform/static/js/2.c38c194c.chunk.js",
-  "static/js/2.c38c194c.chunk.js.map": "/UBPlatform/static/js/2.c38c194c.chunk.js.map",
+  "static/css/2.1a863357.chunk.css": "/UBPlatform/static/css/2.1a863357.chunk.css",
+  "static/js/2.26f8b1bd.chunk.js": "/UBPlatform/static/js/2.26f8b1bd.chunk.js",
+  "static/js/2.26f8b1bd.chunk.js.map": "/UBPlatform/static/js/2.26f8b1bd.chunk.js.map",
   "index.html": "/UBPlatform/index.html",
-  "precache-manifest.a09bd22f927df08b5fad02bc75d029a2.js": "/UBPlatform/precache-manifest.a09bd22f927df08b5fad02bc75d029a2.js",
+  "precache-manifest.8823e58c86a7dcfbae8808416e929289.js": "/UBPlatform/precache-manifest.8823e58c86a7dcfbae8808416e929289.js",
   "service-worker.js": "/UBPlatform/service-worker.js",
-  "static/css/2.e673c61f.chunk.css.map": "/UBPlatform/static/css/2.e673c61f.chunk.css.map",
-  "static/css/main.8d02c1b7.chunk.css.map": "/UBPlatform/static/css/main.8d02c1b7.chunk.css.map",
-  "static/media/default-profile.png": "/UBPlatform/static/media/default-profile.3cbc128f.png"
+  "static/css/2.1a863357.chunk.css.map": "/UBPlatform/static/css/2.1a863357.chunk.css.map",
+  "static/css/main.e29e3876.chunk.css.map": "/UBPlatform/static/css/main.e29e3876.chunk.css.map",
+  "static/media/default-profile.png": "/UBPlatform/static/media/default-profile.3cbc128f.png",
+  "static/media/display2.png": "/UBPlatform/static/media/display2.430e8796.png"
 }
