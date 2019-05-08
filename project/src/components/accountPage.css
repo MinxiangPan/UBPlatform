@@ -1,0 +1,25 @@
+.center-text {
+  text-align: center;
+}
+
+.center-button {
+  text-align: center;
+}
+
+.body {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  margin-top: 1%;
+}
+
+.line {
+  height: 3px;
+  border: none;
+  color: rgb(70, 72, 76);
+  background-color: rgb(70, 72, 76);
+}
+
+.left {
+  text-align: left;
+}
