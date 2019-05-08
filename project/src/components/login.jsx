@@ -26,24 +26,25 @@ class login extends Component {
       });
   };
 
-  render() {
-    const responseGoogle = response => {
-      if(response != null && response.profileObj.name != null && response.El != null){
-        this.LogintoDB({
-          username: response.profileObj.name,
-          password: response.El
-        });
-      }
-    };
+  responseGoogle = response => {
+    if(response != null && response.profileObj.name != null && response.El != null){
+      this.LogintoDB({
+        username: response.profileObj.name,
+        password: response.El
+      });
+    }
+  };
 
-    const responseFacebook = response => {
-      if(response != null && response.name != null && response.id != null){
-        this.LogintoDB({
-          username: response.name,
-          password: response.id
-        });
-      }
-    };
+  responseFacebook = response => {
+    if(response != null && response.name != null && response.id != null){
+      this.LogintoDB({
+        username: response.name,
+        password: response.id
+      });
+    }
+  };
+
+  render() {
 
     return (
       <React.Fragment>
