@@ -28,17 +28,21 @@ class login extends Component {
 
   render() {
     const responseGoogle = response => {
-      this.LogintoDB({
-        username: response.profileObj.name,
-        password: response.El
-      });
+      if(response != null && response.profileObj.name != null && response.El != null){
+        this.LogintoDB({
+          username: response.profileObj.name,
+          password: response.El
+        });
+      }
     };
 
     const responseFacebook = response => {
-      this.LogintoDB({
-        username: response.name,
-        password: response.id
-      });
+      if(response != null && response.name != null && response.id != null){
+        this.LogintoDB({
+          username: response.name,
+          password: response.id
+        });
+      }
     };
 
     return (
@@ -78,8 +82,8 @@ class login extends Component {
               clientId={
                 "943603281803-2glvdsuq90n8lbcttmlkk63t0nh1amnl.apps.googleusercontent.com"
               }
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
+              onSuccess={this.responseGoogle}
+              onFailure={this.responseGoogle}
               render={renderProps => (
                 <button
                   onClick={renderProps.onClick}
@@ -120,7 +124,7 @@ class login extends Component {
               style={{ display: "inline-block" }}
               appId="449634015806449" //APP ID NOT CREATED YET
               fields="name,email,picture"
-              callback={responseFacebook}
+              callback={this.responseFacebook}
               render={renderProps => (
                 <div>
                   <div>

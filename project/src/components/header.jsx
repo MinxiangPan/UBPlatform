@@ -51,7 +51,7 @@ class Header extends Component {
           variant="outline-primary"
           onClick={() =>
             this.props.setContent(
-              <Register login={this.login} api={this.props.api} />
+              <Register login={this.login} api={this.props.api} setContent={this.props.setContent}/>
             )
           }
         >
@@ -131,7 +131,7 @@ class Header extends Component {
           variant="outline-primary"
           onClick={() =>
             this.props.setContent(
-              <Register login={this.login} api={this.props.api} />
+              <Register login={this.login} api={this.props.api} setContent={this.props.setContent}/>
             )
           }
         >

@@ -9,7 +9,7 @@ export const RegisterWrapper = styled.div`
 export const RegisterBox = styled.div`
   margin-top: auto;
   width: 334px;
-  height: 850px;
+  height: 860px;
   background: radial-gradient(
     ellipse farthest-corner at center top,
     #1e90ff 0%,

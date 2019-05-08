@@ -54,7 +54,7 @@ class reportPage extends Component {
           </label>
           <br />
 
-          <input type="submit" value="Submit" onClick={()=>{this.reportSend()}}/>
+          <input type="submit" value="Submit" className="btn btn-primary" onClick={()=>{this.reportSend()}}/>
         </form>
       </React.Fragment>
     );
