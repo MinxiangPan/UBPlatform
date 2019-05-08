@@ -11,133 +11,29 @@ import "./footerStyle.css";
 
 class Register extends Component {
   state = {
-    username: "",
-    password: "",
-    email: "",
-    firstname: "",
-    lastname: "",
-    formErrors: {
-      email: "",
-      password: "",
-      username: "",
-      firstname: "",
-      lastname: ""
-    },
-    usernameValid: false,
-    emailValid: false,
-    firstnameValid: false,
-    lastnameValid: false,
-    passwordValid: false,
-    formValid: false
+    username: null,
+    email: null,
+    firstname: null,
+    lastname: null,
+    password: null
   };
-
   handleScrollTop() {
     window.scrollTo(0, 0);
   }
 
-  handleUserInput = e => {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState({ [name]: value }, () => {
-      this.validateField(name, value);
-    });
-  };
-
-  validateField(fieldName, value) {
-    let fieldValidationErrors = this.state.formErrors;
-    let emailValid = this.state.emailValid;
-    let passwordValid = this.state.passwordValid;
-    let usernameValid = this.state.usernameValid;
-    let firstnameValid = this.state.firstnameValid;
-    let lastnameValid = this.state.lastnameValid;
-
-    switch (fieldName) {
-      case "email":
-        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.email = emailValid ? "" : "email is invalid";
-        break;
-      case "password":
-        passwordValid = value.length >= 6;
-        fieldValidationErrors.password = passwordValid
-          ? ""
-          : "password is too short, it has to be greater than 6";
-        break;
-      case "username":
-        usernameValid = value.length >= 4;
-        fieldValidationErrors.username = usernameValid
-          ? ""
-          : "username is too short";
-      case "firstname":
-        firstnameValid = value.length > 4;
-        fieldValidationErrors.firstname = firstnameValid
-          ? ""
-          : "firstname cannot be empty or it is too short";
-      case "lastname":
-        lastnameValid = value.length > 4;
-        fieldValidationErrors.lastname = lastnameValid
-          ? ""
-          : "lastname cannot be empty or it is too short";
-      default:
-        break;
-    }
-
-    this.setState(
-      {
-        formErrors: fieldValidationErrors,
-        emailValid: emailValid,
-        passwordValid: passwordValid,
-        firstnameValid: firstnameValid,
-        lastnameValid: lastnameValid,
-        usernameValid: usernameValid
-      },
-      this.validateForm
-    );
-  }
-
-  validateForm() {
-    this.setState({
-      formValid:
-        this.state.emailValid &&
-        this.state.passwordValid &&
-        this.state.usernameValid &&
-        this.state.firstnameValid &&
-        this.state.lastnameValid
-    });
-  }
-
   putDataToUserDB = json => {
-    let temp = "";
-    if (!this.state.formValid) {
-      if (!this.state.lastnameValid) {
-        temp += this.state.formErrors.lastname + "\n";
-      }
-      if (!this.state.firstnameValid) {
-        temp += this.state.formErrors.firstname + "\n";
-      }
-      if (!this.state.emailValid) {
-        temp += "Email cannot be empty or its invalid email" + "\n";
-      }
-      if (!this.state.usernameValid) {
-        temp += this.state.formErrors.username + "\n";
-      }
-      if (!this.state.passwordValid) {
-        temp += this.state.formErrors.password + "\n";
-      }
-      alert(temp);
-    } else {
-      axios
-        .post(this.props.api + "/putUser", json)
-        .then(res => {
-          if (res.data.success) {
-            alert("Register Successfully");
-            this.props.login(json);
-          } else alert("User already exist.");
-          console.log(res);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
+    axios
+      .post(this.props.api + "/putUser", json)
+      .then(res => {
+        if (res.data.success) {
+          alert("Register Successfully");
+          this.props.login(json);
+        } else alert("User already exist.");
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   responseGoogle = response => {
@@ -152,19 +48,18 @@ class Register extends Component {
   };
 
   responseFacebook = response => {
-    if(this.state.email != ""){
-      this.putDataToUserDB({
-        username: response.name,
-        firstname: response.name,
-        email: this.state.email,
-        lastname: response.name,
-        password: response.id,
-        interestsList: []
-      });
-    }
+    this.putDataToUserDB({
+      username: response.name,
+      email: this.state.email,
+      firstname: response.name,
+      lastname: response.name,
+      password: response.id,
+      interestsList: []
+    });
   };
 
   render() {
+
     return (
       <React.Fragment>
         <RegisterWrapper>
@@ -174,9 +69,7 @@ class Register extends Component {
               Username:
               <Input
                 type="text"
-                name="username"
-                onChange={this.handleUserInput}
-                //value={this.state.username}
+                onChange={e => this.setState({ username: e.target.value })}
                 placeholder="username"
               />
             </label>
@@ -184,9 +77,7 @@ class Register extends Component {
               Email:
               <Input
                 type="text"
-                name="email"
-                onChange={this.handleUserInput}
-                // value={this.state.email}
+                onChange={e => this.setState({ email: e.target.value })}
                 placeholder="email"
               />
             </label>
@@ -194,9 +85,7 @@ class Register extends Component {
               Firstname:
               <Input
                 type="text"
-                name="firstname"
-                onChange={this.handleUserInput}
-                // value={this.state.firstname}
+                onChange={e => this.setState({ firstname: e.target.value })}
                 placeholder="firstname"
               />
             </label>
@@ -204,9 +93,7 @@ class Register extends Component {
               Lastname:
               <Input
                 type="text"
-                name="lastname"
-                onChange={this.handleUserInput}
-                // value={this.state.lastname}
+                onChange={e => this.setState({ lastname: e.target.value })}
                 placeholder="lastname"
               />
             </label>
@@ -214,12 +101,11 @@ class Register extends Component {
               Password:
               <Input
                 type="password"
-                name="password"
-                // value={this.state.password}
-                onChange={this.handleUserInput}
+                onChange={e => this.setState({ password: e.target.value })}
                 placeholder="password"
               />
             </label>
+
             <Button
               onClick={() =>
                 this.putDataToUserDB({
