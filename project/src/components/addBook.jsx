@@ -2,8 +2,15 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class AddBook extends Component {
-  state = { title: null, price: null, course: null, url: null, owner: null };
-
+  state = {
+    title: null,
+    price: null,
+    course: null,
+    url: null,
+    edition: null,
+    description: null,
+    author: null
+  };
   // our put method that uses our backend api
   // to create new query into our data base
   // # json = json object
@@ -61,6 +68,37 @@ class AddBook extends Component {
             style={{ width: "200px" }}
           />
         </label>
+
+        <label>
+          Author for book:
+          <input
+            type="text"
+            onChange={e => this.setState({ author: e.target.value })}
+            placeholder=""
+            style={{ width: "200px" }}
+          />
+        </label>
+
+        <label>
+          Edition for book:
+          <input
+            type="text"
+            onChange={e => this.setState({ edition: e.target.value })}
+            placeholder=""
+            style={{ width: "200px" }}
+          />
+        </label>
+
+        <label>
+          Description for book:
+          <input
+            type="text"
+            onChange={e => this.setState({ description: e.target.value })}
+            placeholder=""
+            style={{ width: "200px" }}
+          />
+        </label>
+
         <button
           style={{ width: "200px" }}
           onClick={() => {
@@ -70,7 +108,11 @@ class AddBook extends Component {
               price: this.state.price,
               course: this.state.course,
               url: this.state.url,
-              owner: this.props.username
+              edition: this.state.edition,
+              owner: this.props.username,
+              email: this.props.user.email,
+              description: this.state.description,
+              author: this.state.author
             });
           }}
         >
