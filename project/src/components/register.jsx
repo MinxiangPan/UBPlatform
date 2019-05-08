@@ -71,14 +71,16 @@ class Register extends Component {
                 type="text"
                 onChange={e => this.setState({ username: e.target.value })}
                 placeholder="username"
+                required
               />
             </label>
             <label>
               Email:
               <Input
-                type="text"
+                type="email"
                 onChange={e => this.setState({ email: e.target.value })}
                 placeholder="email"
+                required
               />
             </label>
             <label>
@@ -103,6 +105,7 @@ class Register extends Component {
                 type="password"
                 onChange={e => this.setState({ password: e.target.value })}
                 placeholder="password"
+                required
               />
             </label>
 
