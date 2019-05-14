@@ -29,7 +29,6 @@ class reportPage extends Component {
         <form
           class="form-style-9"
           style={{ textAlign: "center" }}
-          action=""
         >
           <label>
             Seller Username:
