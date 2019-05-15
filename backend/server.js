@@ -26,6 +26,7 @@ const whitelist = [
   "http://localhost:3000",
   "http://localhost:3001",
   "http://localhost:5555",
+  "https://www.matpan.com",
   "http://www.matpan.com/UBPlatform",
   "https://www.matpan.com/UBPlatform"
 ];
