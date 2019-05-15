@@ -52,7 +52,6 @@ class reportPage extends Component {
             <textarea rows="4" cols="50" name="comment" form="usrform" onChange={(e)=> {this.setState({reason: e.target.value})}}/>
           </label>
           <br />
-
           <input type="submit" value="Submit" className="btn btn-primary" onClick={()=>{this.reportSend()}}/>
         </form>
       </React.Fragment>
