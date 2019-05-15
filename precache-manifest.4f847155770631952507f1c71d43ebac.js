@@ -12,15 +12,15 @@ self.__precacheManifest = [
     "url": "/UBPlatform/static/js/runtime~main.4dabe35e.js"
   },
   {
-    "revision": "ad4745790a5c7820232a",
-    "url": "/UBPlatform/static/js/main.165efb02.chunk.js"
+    "revision": "941d9892e3313b83ea18",
+    "url": "/UBPlatform/static/js/main.1d621fae.chunk.js"
   },
   {
     "revision": "c7b98a8046ec4c38f845",
     "url": "/UBPlatform/static/js/2.b0cdfcde.chunk.js"
   },
   {
-    "revision": "ad4745790a5c7820232a",
+    "revision": "941d9892e3313b83ea18",
     "url": "/UBPlatform/static/css/main.e29e3876.chunk.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/UBPlatform/static/css/2.20815b04.chunk.css"
   },
   {
-    "revision": "7cae431fcff824e26981b1856ab5fa2d",
+    "revision": "92837c421e45394c81346825aed79eba",
     "url": "/UBPlatform/index.html"
   }
 ];
