@@ -238,7 +238,7 @@ e2
             <Nav.Link
               href="#reportPage"
               onSelect={() => {
-                this.props.setContent(<ReportPage api={this.props.api} />);
+                this.props.setContent(<ReportPage api={this.props.api} setContent={this.props.setContent}/>);
               }}
             >
               Report
