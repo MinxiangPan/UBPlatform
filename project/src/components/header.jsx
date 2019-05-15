@@ -214,7 +214,6 @@ class Header extends Component {
             style={{ width: 30 }}
           />
         </Navbar.Brand>
-e2
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
