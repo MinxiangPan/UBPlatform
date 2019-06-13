@@ -17,7 +17,7 @@ import { setTimeout } from "timers";
 import ReportPage from "./reportPage";
 import Cookies from 'universal-cookie';
 
-import Demo from "./Demo";
+import Demo from "./demo";
 import logo1 from "./images/logo1.png";
 // import logo2 from "../logo2.png";
 // import logo3 from "../logo3.png";
